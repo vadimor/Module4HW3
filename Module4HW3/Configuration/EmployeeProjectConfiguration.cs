@@ -9,7 +9,7 @@ namespace Module4HW3.Configuration
         public void Configure(EntityTypeBuilder<EmployeeProjectEntity> builder)
         {
             builder.ToTable("EmployeeProject").HasKey(p => p.EmployeeProjectId);
-            builder.Property(p => p.EmployeeProjectId).ValueGeneratedOnAdd();
+            builder.Property(p => p.EmployeeProjectId).ValueGeneratedNever();
             builder.Property(p => p.Rate).IsRequired().HasColumnType("money");
             builder.Property(p => p.StartedDate).IsRequired().HasMaxLength(7);
             builder.Property(p => p.EmployeeId).IsRequired();
